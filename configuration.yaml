@@ -1,0 +1,190 @@
+################################################################
+## Configuration
+################################################################
+
+homeassistant:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  unit_system: imperial
+  time_zone: America/Los_Angeles
+  customize: !include customize.yaml
+
+frontend:
+config:
+logbook:
+conversation:
+history:
+map:
+hassio:
+sun:
+ios:
+recorder:
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+zwave:
+  usb_path: /dev/serial/by-id/usb-0658_0200-if00
+  network_key: !secret network_key
+
+discovery:
+  ignore:
+    - plex_mediaserver
+
+updater:
+  include_used_components: true
+
+climate:
+  - platform: zwave
+
+logger:
+  default: info
+  logs:
+    custom_components: debug
+
+lutron_caseta_pro:
+    bridges:
+      - host: !secret lutron_host_ip
+
+mqtt:
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port
+  client_id: !secret mqtt_client
+  username: !secret mqtt_user
+  password: !secret mqtt_pass
+
+http:
+  base_url: diazhouse.duckdns.org:8123
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  api_password: !secret api_password
+
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:home
+    url_path: floorplan
+    config: !include floorplan.yaml
+
+input_boolean:
+  e8t1:
+  e8t2:
+  e8t3:
+  e8t4:
+
+emulated_hue:
+  host_ip: !secret hue_host_ip
+  expose_by_default: false
+  entities:
+    input_boolean.e8t1:
+      hidden: false
+    input_boolean.e8t2:
+      hidden: false
+    input_boolean.e8t3:
+      hidden: false
+    input_boolean.e8t4:
+      hidden: false
+
+cloud:
+  alexa:
+    filter:
+      exclude_domains:
+        - group
+        - remote
+        - media_player
+        - input_boolean
+        - fan
+        - sensor
+      exclude_entities:
+        - light.xiaomi_gateway
+
+input_number:
+  target_temp_heat:
+    min: 60
+    max: 80
+    step: 1
+  target_temp_cool:
+    min: 66
+    max: 85
+    step: 1
+
+light:
+  - platform: flux_led
+    automatic_add: True
+    devices:
+      192.168.1.102:
+        name: flux_led
+        mode: rgb
+  - platform: group
+    name: Bedroom Lamp
+    entities:
+      - light.hue_bedroom_lamp_1
+      - light.hue_bedroom_lamp_2
+
+
+xiaomi_aqara:
+  gateways:
+    - mac: 78:11:dc:b7:dc:e0
+      host: 192.168.1.225
+      key: FCD974A661174EC8
+
+sensor:
+  - platform: uscis
+    case_id: IOE0903303120
+    name: USCIS
+
+device_tracker:
+  - platform: owntracks
+  - platform: unifi
+    host: 192.168.1.172
+    port: 8443
+    username: ha
+    password: ha
+    verify_ssl: false
+    detection_time: 600
+    ssid_filter:
+      - 'coop-5G'
+    
+binary_sensor:
+  - platform: bayesian
+    prior: 0.5
+    name: 'Carlos Presence'
+    probability_threshold: 0.8
+    observations:
+      - entity_id: device_tracker.carlosiphone7
+        prob_given_true: 0.9
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: device_tracker.carlos_ios_app
+        prob_given_true: 0.7
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: device_tracker.phone_c_phone_c
+        prob_given_true: 0.7
+        platform: 'state'
+        to_state: 'home'
+  - platform: bayesian
+    prior: 0.5
+    name: 'Lily Presence'
+    probability_threshold: 0.8
+    observations:
+      - entity_id: device_tracker.lilysiphone7
+        prob_given_true: 0.9
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: device_tracker.lilys_iphone_7
+        prob_given_true: 0.7
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: device_tracker.phone_l_phone_l
+        prob_given_true: 0.7
+        platform: 'state'
+        to_state: 'home'
+
+#remote:
+#  - platform: harmony
+#    name: Living Room
+#    host: 192.168.1.208
+#    activity: Watch TV

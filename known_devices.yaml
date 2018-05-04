@@ -1,0 +1,112 @@
+################################################################
+## Known Devices
+################################################################
+
+## Carlos
+
+carlos:
+  hide_if_away: false
+  name: carlos
+  picture: /local/headshot-carlos.jpg
+  track: true
+
+carlosiphone7:
+  hide_if_away: false
+  mac: 2C:20:0B:B3:BA:F7
+  name: Carlos-iPhone7
+  track: true
+
+carlos_ios_app:
+  hide_if_away: false
+  name: carlos ios app
+  picture:
+  track: true
+
+phone_c_phone_c:
+  hide_if_away: false
+  name: phone c
+  track: true
+
+## Lily
+
+lily:
+  hide_if_away: false
+  name: lily
+  picture: /local/headshot-lily.jpg
+  track: true
+
+lilysiphone7:
+  hide_if_away: false
+  mac: 64:B0:A6:85:E2:AA
+  name: Lilys-iPhone-7
+  track: true
+
+lily_ios_app:
+  hide_if_away: false
+  name: lily ios app
+  track: true
+
+phone_l_phone_l:
+  hide_if_away: false
+  name: Lily
+  track: true
+
+## Other Devices
+
+lilysmbp:
+  hide_if_away: false
+  mac: 00:26:08:E5:F2:03
+  name: Lilys-MBP
+  track: true
+
+lilys_ipad:
+  hide_if_away: false
+  mac: b8:63:4d:9c:01:01
+  name: lilys ipad
+  track: true
+
+## Do Not Track
+
+amazon963ea390f:
+  hide_if_away: false
+  mac: FC:A1:83:FA:67:FB
+  name: amazon-963ea390f
+  track: false
+
+chromecastaudio:
+  hide_if_away: false
+  mac: 54:60:09:EB:94:D8
+  name: Chromecast-Audio
+  track: false
+
+amazon7fd45b3b1:
+  hide_if_away: false
+  mac: 68:54:FD:BD:17:DA
+  name: amazon-7fd45b3b1
+  track: false
+
+## End for now
+
+macbookpro:
+  hide_if_away: false
+  icon:
+  mac: 20:C9:D0:42:72:99
+  name: MacBook-Pro
+  picture:
+  track: true
+
+amazon5d751664c:
+  hide_if_away: false
+  icon:
+  mac: 68:54:FD:78:B4:8C
+  name: amazon-5d751664c
+  picture:
+  track: true
+
+amazon3470e0a90:
+  hide_if_away: false
+  icon:
+  mac: 00:71:47:94:29:F3
+  name: amazon-3470e0a90
+  picture:
+  track: true
