@@ -73,7 +73,7 @@ input_boolean:
   e8t4:
 
 emulated_hue:
-  host_ip: !secret hue_host_ip
+  host_ip: !secret emulated_hue_host_ip
   expose_by_default: false
   entities:
     input_boolean.e8t1:
