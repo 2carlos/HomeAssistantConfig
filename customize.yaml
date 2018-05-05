@@ -1,6 +1,0 @@
-light.flux_led:
-  friendly_name: LED strip
-climate.thermostat_cool:
-  icon: mdi:snowflake
-climate.thermostat_heat:
-  icon: mdi:fire
