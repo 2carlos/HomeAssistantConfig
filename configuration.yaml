@@ -9,7 +9,7 @@ homeassistant:
   elevation: !secret home_elevation
   unit_system: imperial
   time_zone: America/Los_Angeles
-  customize: !include customize.yaml
+  packages: !include_dir_named packages
 
 frontend:
 config:
@@ -56,7 +56,7 @@ mqtt:
   password: !secret mqtt_pass
 
 http:
-  base_url: diazhouse.duckdns.org:8123
+  base_url: !secret http_address
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
   api_password: !secret api_password
@@ -127,19 +127,19 @@ light:
 xiaomi_aqara:
   gateways:
     - mac: 78:11:dc:b7:dc:e0
-      host: 192.168.1.225
-      key: FCD974A661174EC8
+      host: !secret xiaomi_host
+      key: !secret xiaomi_key
 
 sensor:
   - platform: uscis
-    case_id: IOE0903303120
+    case_id: !secret USCIS_case
     name: USCIS
 
 device_tracker:
   - platform: owntracks
   - platform: unifi
-    host: 192.168.1.172
-    port: 8443
+    host: !secret unifi_host
+    port: !secret unifi_port
     username: ha
     password: ha
     verify_ssl: false
@@ -186,5 +186,5 @@ binary_sensor:
 #remote:
 #  - platform: harmony
 #    name: Living Room
-#    host: 192.168.1.208
+#    host: !secret harmony_host
 #    activity: Watch TV
