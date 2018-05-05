@@ -121,6 +121,10 @@ light:
       - light.hue_bedroom_lamp_1
       - light.hue_bedroom_lamp_2
 
+hue:
+  bridges:
+    - host: !secret hue_host_ip
+      allow_unreachable: true
 
 xiaomi_aqara:
   gateways:
