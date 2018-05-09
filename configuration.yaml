@@ -13,7 +13,6 @@ homeassistant:
   time_zone: America/Los_Angeles
   packages: !include_dir_named packages
 
-frontend:
 config:
 logbook:
 conversation:
@@ -23,6 +22,12 @@ hassio:
 sun:
 ios:
 recorder:
+
+frontend:
+  extra_html_url:
+    - /local/custom_ui/state-card-tiles.html
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-tiles_es5.html
 
 zwave:
   usb_path: /dev/serial/by-id/usb-0658_0200-if00
@@ -34,9 +39,6 @@ discovery:
 
 updater:
   include_used_components: true
-
-climate:
-  - platform: zwave
 
 logger:
   default: info
@@ -66,12 +68,22 @@ panel_custom:
     sidebar_icon: mdi:home
     url_path: floorplan
     config: !include floorplan.yaml
+  - name: tiles
+    sidebar_title: Tiles
+    sidebar_icon: mdi:view-dashboard
+    url_path: tiles
+    config:
+      entities:
+        - entity: input_boolean.switch1
+          label: Switch 1
 
 input_boolean:
   e8t1:
   e8t2:
   e8t3:
   e8t4:
+  dummy_tiles:
+  switch1:
 
 emulated_hue:
   host_ip: !secret emulated_hue_host_ip
@@ -85,16 +97,6 @@ emulated_hue:
       hidden: false
     input_boolean.e8t4:
       hidden: false
-
-input_number:
-  target_temp_heat:
-    min: 60
-    max: 80
-    step: 1
-  target_temp_cool:
-    min: 66
-    max: 85
-    step: 1
 
 light:
   - platform: flux_led
@@ -124,7 +126,6 @@ sensor:
   - platform: uscis
     case_id: !secret USCIS_case
     name: USCIS
-
 
 #remote:
 #  - platform: harmony

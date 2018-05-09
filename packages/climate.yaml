@@ -1,0 +1,13 @@
+input_number:
+  target_temp_heat:
+    min: 60
+    max: 80
+    step: 1
+  target_temp_cool:
+    min: 66
+    max: 85
+    step: 1
+
+climate:
+  - platform: zwave
+

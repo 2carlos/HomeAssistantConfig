@@ -1,0 +1,229 @@
+homeassistant:
+  customize:
+    input_boolean.tiles_showcase:
+      custom_ui_state_card: state-card-tiles
+      config:
+        columns: 3
+        column_width: 75px
+        row_height: 75px
+        entities:
+          - entity: input_boolean.switch1
+            label: S1
+          - entity: input_boolean.switch2
+            label: S2
+            column: 3
+            row_span: 3
+          - entity: script.switches_off
+            icon: mdi:power
+            icon_size: 50px
+            column_span: 2
+            row_span: 2
+          - entity: script.press_button
+            icon: mdi:arrow-up-thick
+            column: 2
+            row: 4
+            data:
+              value: top
+          - entity: script.press_button
+            icon: mdi:arrow-left-thick
+            column: 1
+            row: 5
+            data:
+              value: left
+          - entity: script.press_button
+            image: /local/ok.png
+            column: 2
+            row: 5
+            data:
+              value: ok
+          - entity: script.press_button
+            icon: mdi:arrow-right-thick
+            column: 3
+            row: 5
+            data:
+              value: right
+          - entity: script.press_button
+            icon: mdi:arrow-down-thick
+            column: 2
+            row: 6
+            data:
+              value: value
+    input_boolean.tiles_domains:
+      custom_ui_state_card: state-card-tiles
+      config:
+        columns: 4
+        row_height: 50px
+        entities:
+          - entity: script.switches_off
+            label: Script off
+          - entity: scene.switches_on
+            label: Scene on
+          - entity: sensor.random
+            label_sec: Sensor
+          - entity: sensor.random_uom
+            label_sec: Sensor uom
+          - entity: input_boolean.switch1
+            label: Switch 1
+            label_sec_state: input_boolean.switch1
+          - entity: input_boolean.switch2
+            label: Switch 2
+            label_sec_state: input_boolean.switch2
+          - entity: group.switches
+            label: Group
+          - entity: group.switches
+            label: Group more info
+            more_info: group.switches
+    input_boolean.tiles_templates:
+      custom_ui_state_card: state-card-tiles
+      config:
+        columns: 3
+        row_height: 50px
+        entities:
+          - entity: sensor.random
+            label: From state
+            label_sec_template: "if (state < 10) return '<10'; else return '>=10';"
+          - entity: sensor.random
+            label: Other entity
+            label_sec_template: "return 'S1: ' + entities['input_boolean.switch1'].state;"
+          - entity: sensor.random_uom
+            label: From attribute
+            label_sec_template: "return attributes.unit_of_measurement;"
+          - entity: input_boolean.switch1
+            label_sec: Icon
+            icon_template: "if (state === 'on') return 'mdi:power-plug'; else return 'mdi:power-plug-off'"
+          - entity: input_boolean.switch1
+            label: Style bg-image
+            color_on: black
+            color_off: black
+            style_template: "return 'background-image: url(\"/local/' + state + '.png\");'"
+          - entity: input_boolean.switch1
+            label: Style
+            style_template: "if (state !== 'on') return 'text-decoration: line-through';"
+
+config:
+
+frontend:
+  extra_html_url:
+    - /local/custom_ui/state-card-tiles.html
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-tiles_es5.html
+    
+input_boolean:
+  switch1:
+  switch2:
+  tiles_showcase:
+  tiles_domains:
+  tiles_templates:
+
+sensor:
+  - platform: random
+    name: Random
+  - platform: random
+    name: Random UOM
+    unit_of_measurement: m/s
+
+scene:
+  - name: Switches on
+    entities:
+      input_boolean.switch1: on
+      input_boolean.switch2: on
+
+script:
+  switches_off:
+    alias: Switches off
+    sequence:
+      service: input_boolean.turn_off
+  press_button:
+    alias: Press button
+    sequence:
+      service: input_text.set_value
+      data:
+        entity_id: input_text.button
+      data_template:
+        value: "{{ value }}"
+
+input_text:
+  button:
+    name: Button
+
+group:
+  tiles1:
+    name: Showcase
+    entities:
+      - input_boolean.tiles_showcase
+  tiles2:
+    name: Some domains
+    entities:
+      - input_boolean.tiles_domains
+  tiles3:
+    name: Templates
+    entities:
+      - input_boolean.tiles_templates
+  switches:
+    name: Switches
+    entities:
+      - input_boolean.switch1
+      - input_boolean.switch2
+  other:
+    name: Other
+    entities:
+      - input_text.button
+      - script.press_button
+      - script.switches_off
+      - scene.switches_on
+      - sensor.random
+      - sensor.random_uom
+
+panel_custom:
+  - name: tiles
+    sidebar_title: Tiles
+    sidebar_icon: mdi:view-dashboard
+    url_path: tiles
+    config:
+      bg_color: "#24292e"
+      entities:
+        - entity: input_boolean.switch1
+          label: Switch 1
+  - name: tiles
+    sidebar_title: Tiles Multi
+    sidebar_icon: mdi:view-dashboard
+    url_path: tiles_multi
+    config:
+      bg_color: "#24292e"  # optional
+      title: Tiles as your dashboard  #optional
+      columns: 2           # optional
+      column_width: 1fr    # optional
+      rows: 2              # optional
+      row_height: 1fr      # optional
+      gap: 8px             # optional
+      header_color: "#FFF" # optional
+      header_size: 2.5em   # optional
+      multi:
+        - header: 1        # optional
+          row: 1           # optional
+          row_span: 1      # optional
+          column: 1        # optional
+          column_span: 2   # optional
+          tiles:
+            columns: 1
+            entities:
+              - entity: input_boolean.switch1
+                label: Switch 1
+              - entity: input_boolean.switch2
+                label: Switch 2
+        - header: 2
+          tiles:
+            columns: 1
+            entities:
+              - entity: input_boolean.switch1
+                label: Switch 1
+              - entity: input_boolean.switch2
+                label: Switch 2
+        - header: 3
+          tiles:
+            columns: 2
+            entities:
+              - entity: input_boolean.switch1
+                label: Switch 1
+              - entity: input_boolean.switch2
+                label: Switch 2

@@ -6,3 +6,10 @@ homeassistant:
       icon: mdi:snowflake
     climate.thermostat_heat:
       icon: mdi:fire
+    input_boolean.dummy_tiles:
+      custom_ui_state_card: state-card-tiles
+      config:
+        {{ grid config }}
+        entities:
+          - entity: input_boolean.switch1
+            {{ entity config }}
