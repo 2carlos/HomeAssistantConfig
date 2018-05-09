@@ -58,21 +58,6 @@ http:
   ssl_key: /ssl/privkey.pem
   api_password: !secret api_password
 
-panel_custom:
-  - name: floorplan
-    sidebar_title: Floorplan
-    sidebar_icon: mdi:home
-    url_path: floorplan
-    config: !include floorplan.yaml
-  - name: tiles
-    sidebar_title: Tiles
-    sidebar_icon: mdi:view-dashboard
-    url_path: tiles
-    config:
-      entities:
-        - entity: input_boolean.switch1
-          label: Switch 1
-
 input_boolean:
   e8t1:
   e8t2:
