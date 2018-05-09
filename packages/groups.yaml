@@ -26,6 +26,7 @@ group:
     - sensor.version
     - sensor.door_access_control
     - remote.harmony_hub
+    - device_tracker.lily
     - input_boolean.e8t1
     - input_boolean.e8t2
     - input_boolean.e8t3
