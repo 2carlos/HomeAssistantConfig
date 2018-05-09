@@ -24,10 +24,6 @@ ios:
 recorder:
 
 frontend:
-  extra_html_url:
-    - /local/custom_ui/state-card-tiles.html
-  extra_html_url_es5:
-    - /local/custom_ui/state-card-tiles_es5.html
 
 zwave:
   usb_path: /dev/serial/by-id/usb-0658_0200-if00
@@ -82,8 +78,6 @@ input_boolean:
   e8t2:
   e8t3:
   e8t4:
-  dummy_tiles:
-  switch1:
 
 emulated_hue:
   host_ip: !secret emulated_hue_host_ip
