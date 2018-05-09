@@ -100,8 +100,6 @@ homeassistant:
             label: Style
             style_template: "if (state !== 'on') return 'text-decoration: line-through';"
 
-config:
-
 frontend:
   extra_html_url:
     - /local/custom_ui/state-card-tiles.html
