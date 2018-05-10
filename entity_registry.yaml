@@ -210,3 +210,11 @@ light.hue_bedroom_lamp_2:
   name: Carlos' Side
   platform: hue
   unique_id: 00:17:88:01:03:83:30:0f-0b
+switch.kitchen_ceiling:
+  name: Kitchen Ceiling
+  platform: zwave
+  unique_id: 9-72057594193723392
+switch.Bedroom:
+  name: Bedroom Switch
+  platform: zwave
+  unique_id: 10-72057594210500608
