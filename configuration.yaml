@@ -84,11 +84,6 @@ light:
       192.168.1.102:
         name: flux_led
         mode: rgb
-  - platform: group
-    name: Bedroom Lamp
-    entities:
-      - light.hue_bedroom_lamp_1
-      - light.hue_bedroom_lamp_2
 
 hue:
   bridges:
