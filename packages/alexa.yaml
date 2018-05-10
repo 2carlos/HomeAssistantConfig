@@ -8,5 +8,10 @@ cloud:
         - input_boolean
         - fan
         - sensor
+        - automation
       exclude_entities:
-        - light.xiaomi_gateway
+        - light.gateway
+        - input_boolean.e8t1
+        - input_boolean.e8t2
+        - input_boolean.e8t3
+        - input_boolean.e8t4
