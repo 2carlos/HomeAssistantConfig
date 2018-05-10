@@ -15,3 +15,6 @@ cloud:
         - input_boolean.e8t2
         - input_boolean.e8t3
         - input_boolean.e8t4
+        - switch.bedroom_lamp
+        - switch.office_lamp
+        - light.study_lamp
