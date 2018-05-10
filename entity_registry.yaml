@@ -131,7 +131,7 @@ sensor.temperature_thermostat:
   platform: zwave
   unique_id: 7-72057594160365586
 lock.front_door:
-  name:
+  name: Front Door
   platform: zwave
   unique_id: 8-72057594177945600
 sensor.front_door_alarm_type:
