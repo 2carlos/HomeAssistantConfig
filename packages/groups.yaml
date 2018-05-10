@@ -51,7 +51,7 @@ group:
     name: Bedroom
     control: hidden
     entities:
-    - switch.bedroom_lamp
+    - switch.bedroom
     - light.hue_bedroom_lamp_1
     - light.hue_bedroom_lamp_2
 
