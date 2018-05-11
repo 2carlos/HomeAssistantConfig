@@ -23,6 +23,9 @@ group:
     - group.environment
     - group.sensors
     - group.door
+    - group.all_scripts
+    - group.all_remotes
+    - group.all_switches
     - sensor.version
     - sensor.door_access_control
     - remote.harmony_hub
