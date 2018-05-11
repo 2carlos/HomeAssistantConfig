@@ -22,7 +22,6 @@ hassio:
 sun:
 ios:
 recorder:
-
 frontend:
 
 zwave:
@@ -58,25 +57,6 @@ http:
   ssl_key: /ssl/privkey.pem
   api_password: !secret api_password
 
-input_boolean:
-  e8t1:
-  e8t2:
-  e8t3:
-  e8t4:
-
-emulated_hue:
-  host_ip: !secret emulated_hue_host_ip
-  expose_by_default: false
-  entities:
-    input_boolean.e8t1:
-      hidden: false
-    input_boolean.e8t2:
-      hidden: false
-    input_boolean.e8t3:
-      hidden: false
-    input_boolean.e8t4:
-      hidden: false
-
 light:
   - platform: flux_led
     automatic_add: True
@@ -100,9 +80,3 @@ sensor:
   - platform: uscis
     case_id: !secret USCIS_case
     name: USCIS
-
-#remote:
-#  - platform: harmony
-#    name: Living Room
-#    host: !secret harmony_host
-#    activity: Watch TV
