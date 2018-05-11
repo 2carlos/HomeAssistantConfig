@@ -44,14 +44,14 @@ lutron_caseta_pro:
     bridges:
       - host: !secret lutron_host_ip
 
-mqtt:
-  broker: !secret mqtt_broker
-  port: !secret mqtt_port
-  client_id: !secret mqtt_client
-  username: !secret mqtt_user
-  password: !secret mqtt_pass
-  discovery: true
-  discovery_prefix: homeassistant
+# mqtt:
+#   broker: !secret mqtt_broker
+#   port: !secret mqtt_port
+#   client_id: !secret mqtt_client
+#   username: !secret mqtt_user
+#   password: !secret mqtt_pass
+#   discovery: true
+#   discovery_prefix: homeassistant
   
 
 http:
