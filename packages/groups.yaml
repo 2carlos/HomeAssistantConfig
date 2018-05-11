@@ -1,8 +1,32 @@
 #################################################
 #
+#  Unhide Default Groups
+#
+#################################################
+
+homeassistant:
+  customize:
+    group.all_automations:
+      hidden: false
+    group.all_devices:
+      hidden: false
+    group.all_lights:
+      hidden: false
+    group.all_locks:
+      hidden: false
+    group.all_remotes:
+      hidden: false
+    group.all_scripts:
+      hidden: false
+    group.all_switches:
+      hidden: false
+
+#################################################
+#
 #  Views
 #
 #################################################
+
 group:
   default_view:
     view: true
@@ -84,26 +108,3 @@ group:
     - sensor.dark_sky_daily_low_temperature
     - sensor.dark_sky_humidity
     - sensor.dark_sky_summary
-
-#################################################
-#
-#  Unhide Default Groups
-#
-#################################################
-
-homeassistant:
-  customize:
-    group.all_automations:
-      hidden: false
-    group.all_devices:
-      hidden: false
-    group.all_lights:
-      hidden: false
-    group.all_locks:
-      hidden: false
-    group.all_remotes:
-      hidden: false
-    group.all_scripts:
-      hidden: false
-    group.all_switches:
-      hidden: false
