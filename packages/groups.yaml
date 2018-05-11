@@ -4,23 +4,6 @@
 #
 #################################################
 
-homeassistant:
-  customize:
-    group.all_automations:
-      hidden: false
-    group.all_devices:
-      hidden: false
-    group.all_lights:
-      hidden: false
-    group.all_locks:
-      hidden: false
-    group.all_remotes:
-      hidden: false
-    group.all_scripts:
-      hidden: false
-    group.all_switches:
-      hidden: false
-
 #################################################
 #
 #  Views
