@@ -50,6 +50,9 @@ mqtt:
   client_id: !secret mqtt_client
   username: !secret mqtt_user
   password: !secret mqtt_pass
+  discovery: true
+  discovery_prefix: homeassistant
+  
 
 http:
   base_url: !secret http_address
