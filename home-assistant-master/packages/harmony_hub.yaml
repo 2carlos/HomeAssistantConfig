@@ -1,0 +1,24 @@
+emulated_hue:
+  host_ip: !secret emulated_hue_host_ip
+  expose_by_default: false
+  entities:
+    input_boolean.e8t1:
+      hidden: false
+    input_boolean.e8t2:
+      hidden: false
+    input_boolean.e8t3:
+      hidden: false
+    input_boolean.e8t4:
+      hidden: false
+
+input_boolean:
+  e8t1:
+  e8t2:
+  e8t3:
+  e8t4:
+
+#remote:
+#  - platform: harmony
+#    name: Living Room
+#    host: !secret harmony_host
+#    activity: Watch TV

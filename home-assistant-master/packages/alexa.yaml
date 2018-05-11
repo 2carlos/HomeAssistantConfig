@@ -1,0 +1,20 @@
+cloud:
+  alexa:
+    filter:
+      exclude_domains:
+        - group
+        - remote
+        - media_player
+        - input_boolean
+        - fan
+        - sensor
+        - automation
+      exclude_entities:
+        - light.gateway
+        - input_boolean.e8t1
+        - input_boolean.e8t2
+        - input_boolean.e8t3
+        - input_boolean.e8t4
+        - switch.bedroom_lamp
+        - switch.office_lamp
+        - light.study_lamp

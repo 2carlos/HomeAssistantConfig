@@ -1,0 +1,91 @@
+#################################################
+#
+#  Configuration
+#
+#################################################
+
+homeassistant:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  unit_system: imperial
+  time_zone: America/Los_Angeles
+  packages: !include_dir_named packages
+
+config:
+logbook:
+conversation:
+history:
+map:
+hassio:
+sun:
+ios:
+recorder:
+frontend:
+
+zwave:
+  usb_path: /dev/serial/by-id/usb-0658_0200-if00
+  network_key: !secret network_key
+
+discovery:
+  ignore:
+    - plex_mediaserver
+
+updater:
+  include_used_components: true
+
+logger:
+  default: info
+  logs:
+    custom_components: debug
+
+lutron_caseta_pro:
+    bridges:
+      - host: !secret lutron_host_ip
+
+mqtt:
+  broker: core-mosquitto
+  discovery: true
+  discovery_prefix: homeassistant
+  
+
+# mqtt:
+#   broker: !secret mqtt_broker
+#   port: !secret mqtt_port
+#   client_id: !secret mqtt_client
+#   username: !secret mqtt_user
+#   password: !secret mqtt_pass
+#   discovery: true
+#   discovery_prefix: homeassistant
+  
+
+http:
+  base_url: !secret http_address
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  api_password: !secret api_password
+
+light:
+  - platform: flux_led
+    automatic_add: True
+    devices:
+      192.168.1.102:
+        name: flux_led
+        mode: rgb
+
+hue:
+  bridges:
+    - host: !secret hue_host_ip
+      allow_unreachable: true
+
+xiaomi_aqara:
+  gateways:
+    - mac: 78:11:dc:b7:dc:e0
+      host: !secret xiaomi_host
+      key: !secret xiaomi_key
+
+sensor:
+  - platform: uscis
+    case_id: !secret USCIS_case
+    name: USCIS

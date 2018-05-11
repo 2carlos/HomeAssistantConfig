@@ -1,0 +1,47 @@
+device_tracker:
+  - platform: owntracks
+  - platform: unifi
+    host: !secret unifi_host
+    port: !secret unifi_port
+    username: ha
+    password: ha
+    verify_ssl: false
+    detection_time: 600
+    ssid_filter:
+      - 'coop-5G'
+    
+binary_sensor:
+  - platform: bayesian
+    prior: 0.5
+    name: 'Carlos Presence'
+    probability_threshold: 0.8
+    observations:
+      - entity_id: device_tracker.carlosiphone7
+        prob_given_true: 0.9
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: device_tracker.carlos_ios_app
+        prob_given_true: 0.7
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: device_tracker.phone_c_phone_c
+        prob_given_true: 0.7
+        platform: 'state'
+        to_state: 'home'
+  - platform: bayesian
+    prior: 0.5
+    name: 'Lily Presence'
+    probability_threshold: 0.8
+    observations:
+      - entity_id: device_tracker.lilysiphone7
+        prob_given_true: 0.9
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: device_tracker.lilys_iphone_7
+        prob_given_true: 0.7
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: device_tracker.phone_l_phone_l
+        prob_given_true: 0.7
+        platform: 'state'
+        to_state: 'home'
