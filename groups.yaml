@@ -1,0 +1,109 @@
+#################################################
+#
+#  Views
+#
+#################################################
+group:
+  default_view:
+    view: true
+    name: Home
+    entities:
+    - group.bedroom
+    - group.living_room
+    - group.office
+    - device_tracker.carlos
+    - device_tracker.lily
+    - lock.front_door
+    - configurator.philips_hue
+
+  Lab:
+    name: Lab
+    view: true
+    entities:
+    - group.all_automations
+    - group.all_devices
+    - group.all_lights
+    - group.all_locks
+    - group.all_remotes
+    - group.all_scripts
+    - group.all_switches
+    - group.environment
+    - group.sensors
+    - input_number.target_temp_cool
+    - input_number.target_temp_heat
+    - climate.thermostat_cool
+    - climate.thermostat_heat
+
+#################################################
+#
+#  Groups
+#
+#################################################
+
+  bedroom:
+    name: Bedroom
+    control: hidden
+    entities:
+    - switch.bedroom
+    - light.hue_bedroom_lamp_1
+    - light.hue_bedroom_lamp_2
+
+  living_room:
+    name: Living Room
+    control: hidden
+    entities:
+    - switch.kitchen_ceiling
+    - switch.plugin_lamp
+    - remote.living_room
+    - light.flux_led
+    - light.kitchen_island_pendants
+    - light.dining_room_spot_lights
+    - light.hue_living_room_lamp
+
+  office:
+    name: Office
+    control: hidden
+    entities:
+    - switch.office_lamp
+    - switch.office_plug
+    - light.hue_study_lamp
+
+  sensors:
+    name: sensors
+    entities:
+    - sensor.master_bedroom_pico_bedroom
+    - sensor.kitchen_pico
+
+  environment:
+    name: Environment
+    entities:
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_apparent_temperature
+    - sun.sun
+    - sensor.dark_sky_daily_high_temperature
+    - sensor.dark_sky_daily_low_temperature
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_summary
+
+#################################################
+#
+#  Unhide Default Groups
+#
+#################################################
+
+homeassistant:
+  customize:
+    group.all_automations:
+      hidden: false
+    group.all_devices:
+      hidden: false
+    group.all_lights:
+      hidden: false
+    group.all_locks:
+      hidden: false
+    group.all_remotes:
+      hidden: false
+    group.all_scripts:
+      hidden: false
+    group.all_switches:
+      hidden: false
