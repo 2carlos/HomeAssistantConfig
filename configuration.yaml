@@ -44,6 +44,12 @@ lutron_caseta_pro:
     bridges:
       - host: !secret lutron_host_ip
 
+mqtt:
+  broker: core-mosquitto
+  discovery: true
+  discovery_prefix: homeassistant
+  
+
 # mqtt:
 #   broker: !secret mqtt_broker
 #   port: !secret mqtt_port
