@@ -20,29 +20,19 @@ group:
     name: Lab
     view: true
     entities:
+    - group.all_automations
+    - group.all_devices
+    - group.all_lights
+    - group.all_locks
+    - group.all_remotes
+    - group.all_scripts
+    - group.all_switches
     - group.environment
     - group.sensors
-    - group.door
-    - group.all_scripts
-    - group.all_remotes
-    - group.all_switches
-    - sensor.version
-    - sensor.door_access_control
-    - remote.harmony_hub
-    - device_tracker.lily
-    - input_boolean.e8t1
-    - input_boolean.e8t2
-    - input_boolean.e8t3
-    - input_boolean.e8t4
-    - switch.e8t1
-    - switch.e8t2
-    - switch.e8t3
-    - switch.e8t4
     - input_number.target_temp_cool
     - input_number.target_temp_heat
     - climate.thermostat_cool
     - climate.thermostat_heat
-    - climate.linear_gctbz48_battery_powered_zwave_thermostat_cooling_1
 
 #################################################
 #
@@ -78,11 +68,6 @@ group:
     - switch.office_plug
     - light.hue_study_lamp
 
-  door:
-    name: door sensor
-    entities:
-    - sensor.door_access_control
-
   sensors:
     name: sensors
     entities:
@@ -99,3 +84,26 @@ group:
     - sensor.dark_sky_daily_low_temperature
     - sensor.dark_sky_humidity
     - sensor.dark_sky_summary
+
+#################################################
+#
+#  Unhide Default Groups
+#
+#################################################
+
+homeassistant:
+  customize:
+    group.all_automations:
+      hidden: false
+    group.all_devices:
+      hidden: false
+    group.all_lights:
+      hidden: false
+    group.all_locks:
+      hidden: false
+    group.all_remotes:
+      hidden: false
+    group.all_scripts:
+      hidden: false
+    group.all_switches:
+      hidden: false
