@@ -2,9 +2,9 @@ automation:
   - alias: Home Assistant Startup
     id: Home_Assistant_Startup
     trigger:
-    - platform: homeassistant
-      event: start
+      - platform: homeassistant
+        event: start
     action:
-    - service: notify.slack_notify
-      data:
-        message: Home Assistant is up
+      - service: notify.slack_notify
+        data:
+          message: Home Assistant is up
