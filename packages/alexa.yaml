@@ -20,3 +20,4 @@ cloud:
         - scene
         - script
         - switch
+        - sensor
