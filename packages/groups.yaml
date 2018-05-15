@@ -15,12 +15,12 @@ group:
     view: true
     name: Home
     entities:
+    - lock.front_door
     - group.bedroom
     - group.living_room
-    - group.office
+    - group.study
     - device_tracker.carlos
     - device_tracker.lily
-    - lock.front_door
 #    - configurator.philips_hue
 
   Lab:
@@ -51,7 +51,7 @@ group:
     name: Bedroom
     control: hidden
     entities:
-    - switch.bedroom
+    - sensor.temperature_bedroom
     - light.hue_bedroom_lamp_1
     - light.hue_bedroom_lamp_2
 
@@ -59,6 +59,7 @@ group:
     name: Living Room
     control: hidden
     entities:
+    - sensor.temperature_living_room
     - switch.kitchen_ceiling
     - switch.plugin_lamp
     - remote.living_room
@@ -67,10 +68,11 @@ group:
     - light.dining_room_spot_lights
     - light.hue_living_room_lamp
 
-  office:
-    name: Office
+  study:
+    name: Study
     control: hidden
     entities:
+    - sensor.temperature_study
     - switch.office_lamp
     - switch.office_plug
     - light.hue_study_lamp
@@ -119,5 +121,5 @@ group:
     - sensor.humidity_study
     - sensor.humidity_living_room
     - climate.thermostat_heat
-    - climate.thermostat_heat
+    - climate.thermostat_cool
     - sensor.temperature_thermostat
