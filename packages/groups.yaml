@@ -21,12 +21,15 @@ group:
     - device_tracker.carlos
     - device_tracker.lily
     - lock.front_door
-    - configurator.philips_hue
+#    - configurator.philips_hue
 
   Lab:
     name: Lab
     view: true
     entities:
+    - group.xiaomi
+    - group.motion
+    - group.climate
     - group.all_automations
     - group.all_devices
     - group.all_lights
@@ -34,12 +37,8 @@ group:
     - group.all_remotes
     - group.all_scripts
     - group.all_switches
-    - group.environment
-    - group.sensors
     - input_number.target_temp_cool
     - input_number.target_temp_heat
-    - climate.thermostat_cool
-    - climate.thermostat_heat
     - group.battery_alert
 
 #################################################
@@ -76,19 +75,49 @@ group:
     - switch.office_plug
     - light.hue_study_lamp
 
-  sensors:
-    name: sensors
+  xiaomi:
+    name: xiaomi
     entities:
-    - sensor.master_bedroom_pico_bedroom
-    - sensor.kitchen_pico
+    - sensor.temperature_study
+    - sensor.temperature_living_room
+    - sensor.temperature_bedroom
+    - sensor.pressure_study
+    - sensor.pressure_living_room
+    - sensor.pressure_bedroom
+    - sensor.humidity_bedroom
+    - sensor.humidity_study
+    - sensor.humidity_living_room
+    - sensor.illumination_bedroom
+    - sensor.illumination_study
+    - sensor.illumination_gateway
+    - sensor.illumination_living_room
+    - binary_sensor.cube
+    - binary_sensor.switch_misc
+    - binary_sensor.switch_study
+    - binary_sensor.switch_living_room
+    - binary_sensor.switch_bedroom
+    - binary_sensor.motion_sensor_living_room
+    - binary_sensor.motion_sensor_bedroom
+    - binary_sensor.motion_sensor_study
+    - light.gateway
 
-  environment:
-    name: Environment
+  motion:
+    name: motion
     entities:
-    - sensor.dark_sky_temperature
-    - sensor.dark_sky_apparent_temperature
-    - sun.sun
-    - sensor.dark_sky_daily_high_temperature
-    - sensor.dark_sky_daily_low_temperature
-    - sensor.dark_sky_humidity
-    - sensor.dark_sky_summary
+    - binary_sensor.motion_sensor_living_room
+    - binary_sensor.motion_sensor_bedroom
+    - binary_sensor.motion_sensor_study
+
+  climate:
+    name: climate
+    entities:
+    - sensor.temperature_thermostat
+    - sensor.temperature_study
+    - sensor.temperature_living_room
+    - sensor.temperature_bedroom
+    - sensor.humidity_bedroom
+    - sensor.humidity_study
+    - sensor.humidity_living_room
+    - climate.thermostat_heat
+    - climate.thermostat_heat
+    - sensor.temperature_thermostat
