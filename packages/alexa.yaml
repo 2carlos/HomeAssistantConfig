@@ -1,20 +1,21 @@
 cloud:
   alexa:
     filter:
+      include_entities:
+        - light.bedroom_lights
+        - light.living_room
+        - light.study
+        - switch.kitchen_ceiling
       exclude_domains:
-        - group
-        - remote
-        - media_player
-        - input_boolean
-        - fan
-        - sensor
+        - alert
         - automation
+        - cover
+        - fan
+        - group
+        - input_boolean
+        - light
+        - media_player
+        - scene
+        - script
+        - switch
       exclude_entities:
-        - light.gateway
-        - input_boolean.e8t1
-        - input_boolean.e8t2
-        - input_boolean.e8t3
-        - input_boolean.e8t4
-        - switch.bedroom_lamp
-        - switch.office_lamp
-        - light.study_lamp
