@@ -40,6 +40,7 @@ group:
     - input_number.target_temp_cool
     - input_number.target_temp_heat
     - group.battery_alert
+    - group.front_door
 
 #################################################
 #
@@ -123,3 +124,16 @@ group:
     - climate.thermostat_heat
     - climate.thermostat_cool
     - sensor.temperature_thermostat
+
+  front_door:
+    name: Front Door
+    entities:
+    - lock.front_door
+    - sensor.front_door_alarm_type
+    - sensor.front_door_alarm_level
+    - sensor.front_door_sourcenodeid
+    - sensor.front_door_access_control
+    - sensor.front_door_burglar
+    - sensor.front_door_power_management
+    - sensor.front_door_system
+    
