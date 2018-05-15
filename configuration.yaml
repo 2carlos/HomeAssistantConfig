@@ -78,11 +78,19 @@ light:
     entities:
       - light.hue_bedroom_lamp_1
       - light.hue_bedroom_lamp_2
+  - platform: group
+    name: Living Room Lights
+    entities:
+      - light.flux_led
+      - light.hue_living_room_lamp
+      - light.dining_room_spot_lights
+      - light.kitchen_island_pendants
 
 hue:
   bridges:
     - host: !secret hue_host_ip
       allow_unreachable: true
+      allow_hue_groups: false
 
 xiaomi_aqara:
   gateways:
