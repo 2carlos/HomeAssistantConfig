@@ -44,7 +44,6 @@ group:
 
   bedroom:
     name: Bedroom
-    control: hidden
     entities:
     - sensor.temperature_bedroom
     - light.hue_bedroom_lamp_1
