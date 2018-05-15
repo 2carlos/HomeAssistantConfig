@@ -2,7 +2,9 @@ language: python
 
 python: "3.6.4"
 
-before_install: mv travis_secrets.yaml secrets.yaml
+before_install:
+  - touch fake_key.pem
+  - mv mv travis_secrets.yaml secrets.yaml
 
 install: pip3 install homeassistant
 
