@@ -46,6 +46,7 @@ group:
     name: Bedroom
     entities:
     - sensor.temperature_bedroom
+    - binary_sensor.motion_sensor_bedroom
     - light.hue_bedroom_lamp_1
     - light.hue_bedroom_lamp_2
 
@@ -55,6 +56,9 @@ group:
     entities:
     - sensor.temperature_living_room
     - switch.kitchen_ceiling
+    - binary_sensor.motion_sensor_living_room
+    - sensor.humidity_bedroom
+    - sensor.illumination_bedroom
     - switch.plugin_lamp
     - remote.living_room
     - light.flux_led
@@ -67,8 +71,7 @@ group:
     control: hidden
     entities:
     - sensor.temperature_study
-    - switch.office_lamp
-    - switch.office_plug
+    - binary_sensor.motion_sensor_study
     - light.hue_study_lamp
 
   xiaomi:
