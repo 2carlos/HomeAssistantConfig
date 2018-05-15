@@ -5,6 +5,6 @@ automation:
       - platform: homeassistant
         event: start
     action:
-      - service: notify.slack_notify
+      - service: notify.notify
         data:
           message: Home Assistant is up
