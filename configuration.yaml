@@ -85,11 +85,6 @@ light:
       - light.hue_living_room_lamp
       - light.dining_room_spot_lights
       - light.kitchen_island_pendants
-  - platform: group
-    name: Light Strip
-    entities:
-      - light.flux_led
-
 
 hue:
   bridges:
