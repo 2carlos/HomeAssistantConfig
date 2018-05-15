@@ -11,91 +11,91 @@ media_player.bedroom_speaker:
   platform: cast
   unique_id: de0ca094-bdc7-2413-892b-3decffde419b
 sensor.temperature_bedroom:
-  name:
+  name: Temperature Bedroom
   platform: xiaomi_aqara
   unique_id: temperature158d00022cacc7
 sensor.illumination_bedroom:
-  name:
+  name: Illumination Bedroom
   platform: xiaomi_aqara
   unique_id: lux158d0001e0a9aa
 sensor.humidity_bedroom:
-  name:
+  name: Humidity Bedroom
   platform: xiaomi_aqara
   unique_id: humidity158d00022cacc7
 sensor.pressure_study:
-  name:
+  name: Pressure Study
   platform: xiaomi_aqara
   unique_id: pressure158d00022c711f
 sensor.illumination_study:
-  name:
+  name: Illumination Study
   platform: xiaomi_aqara
   unique_id: lux158d0001de72fc
 sensor.pressure_living_room:
-  name:
+  name: Pressue Living Room
   platform: xiaomi_aqara
   unique_id: pressure158d00022cad8d
 sensor.pressure_bedroom:
-  name:
+  name: Pressue Bedroom
   platform: xiaomi_aqara
   unique_id: pressure158d00022cacc7
 sensor.humidity_study:
-  name:
+  name: Humidity Study
   platform: xiaomi_aqara
   unique_id: humidity158d00022c711f
 sensor.temperature_living_room:
-  name:
+  name: Temperature Living Room
   platform: xiaomi_aqara
   unique_id: temperature158d00022cad8d
 sensor.humidity_living_room:
-  name:
+  name: Humidity Living Room
   platform: xiaomi_aqara
   unique_id: humidity158d00022cad8d
 sensor.illumination_gateway:
-  name:
+  name: Illumination Gateway
   platform: xiaomi_aqara
   unique_id: illumination7811dcb7dce0
 sensor.illumination_living_room:
-  name:
+  name: Illumination Living Room
   platform: xiaomi_aqara
   unique_id: lux158d0001e0ad40
 sensor.temperature_study:
-  name:
+  name: Temperature Study
   platform: xiaomi_aqara
   unique_id: temperature158d00022c711f
 binary_sensor.motion_sensor_living_room:
-  name:
+  name: Motion Living Room
   platform: xiaomi_aqara
   unique_id: status158d0001e0ad40
 binary_sensor.switch_misc:
-  name:
+  name: misc
   platform: xiaomi_aqara
   unique_id: status158d0001a67760
 binary_sensor.cube:
-  name:
+  name: cube
   platform: xiaomi_aqara
   unique_id: cube158d00010df20a
 binary_sensor.switch_study:
-  name:
+  name: switch study
   platform: xiaomi_aqara
   unique_id: status158d0001714470
 binary_sensor.switch_living_room:
-  name:
+  name: button Living Room
   platform: xiaomi_aqara
   unique_id: status158d0001245709
 binary_sensor.switch_bedroom:
-  name:
+  name: button bedroom
   platform: xiaomi_aqara
   unique_id: status158d00016c4991
 binary_sensor.motion_sensor_bedroom:
-  name:
+  name: Motion Bedroom
   platform: xiaomi_aqara
   unique_id: status158d0001e0a9aa
 binary_sensor.motion_sensor_study:
-  name:
+  name: Motion Study
   platform: xiaomi_aqara
   unique_id: status158d0001de72fc
 light.gateway:
-  name:
+  name: Light Gateway
   platform: xiaomi_aqara
   unique_id: rgb7811dcb7dce0
 switch.office_lamp:
@@ -127,7 +127,7 @@ climate.thermostat_cool:
   platform: zwave
   unique_id: 7-72057594160660514
 sensor.temperature_thermostat:
-  name:
+  name: Temp Thermostat
   platform: zwave
   unique_id: 7-72057594160365586
 lock.front_door:
