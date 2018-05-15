@@ -218,3 +218,31 @@ switch.plug_in:
   name:
   platform: zwave
   unique_id: 11-72057594227277824
+zwave.aeotec_zstick:
+  name:
+  platform: zwave
+  unique_id: node-1
+zwave.office_lamp:
+  name:
+  platform: zwave
+  unique_id: node-3
+zwave.thermostat:
+  name:
+  platform: zwave
+  unique_id: node-7
+zwave.schlage_be469:
+  name:
+  platform: zwave
+  unique_id: node-8
+zwave.ge_12722__kitchen_ceiling_onoff_switch:
+  name:
+  platform: zwave
+  unique_id: node-9
+zwave.ge_12722__bedroom_onoff_switch:
+  name:
+  platform: zwave
+  unique_id: node-10
+zwave.vision_plugin_switch:
+  name:
+  platform: zwave
+  unique_id: node-11
