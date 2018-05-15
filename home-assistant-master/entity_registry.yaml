@@ -11,7 +11,7 @@ media_player.bedroom_speaker:
   platform: cast
   unique_id: de0ca094-bdc7-2413-892b-3decffde419b
 sensor.temperature_bedroom:
-  name:
+  name: 
   platform: xiaomi_aqara
   unique_id: temperature158d00022cacc7
 sensor.illumination_bedroom:
