@@ -18,4 +18,3 @@ cloud:
         - scene
         - script
         - switch
-      exclude_entities:
