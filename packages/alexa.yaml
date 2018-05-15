@@ -2,10 +2,12 @@ cloud:
   alexa:
     filter:
       include_entities:
-        - light.bedroom_lights
         - light.living_room
         - light.study
         - switch.kitchen_ceiling
+        - group.study
+        - group.living_room
+        - group.bedroom
       exclude_domains:
         - alert
         - automation
