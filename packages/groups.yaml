@@ -59,6 +59,7 @@ group:
     - switch.plugin_lamp
     - remote.living_room
     - light.flux_led
+    - light.light_strip
     - light.kitchen_island_pendants
     - light.dining_room_spot_lights
     - light.hue_living_room_lamp
