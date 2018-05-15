@@ -11,6 +11,7 @@ cloud:
       exclude_domains:
         - alert
         - automation
+        - climate
         - cover
         - fan
         - group
@@ -19,5 +20,5 @@ cloud:
         - media_player
         - scene
         - script
-        - switch
         - sensor
+        - switch
