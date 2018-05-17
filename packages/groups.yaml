@@ -46,7 +46,9 @@ group:
     name: Bedroom
     entities:
     - sensor.temperature_bedroom
+    - sensor.humidity_bedroom
     - binary_sensor.motion_sensor_bedroom
+    - light.bedroom_lights
     - light.hue_bedroom_lamp_1
     - light.hue_bedroom_lamp_2
 
