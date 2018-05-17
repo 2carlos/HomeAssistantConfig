@@ -7,7 +7,7 @@ cloud:
         - switch.kitchen_ceiling
         - group.study
         - group.living_room
-        - group.bedroom
+        - light.bedroom_lights
       exclude_domains:
         - alert
         - automation
