@@ -1,0 +1,33 @@
+name: My Awesome Home
+views:
+  - name: Home
+    theme: dark-mode
+    cards:
+      - type: entities
+        title: Example
+        entities:
+          - sensor.temperature_bedroom
+          - sensor.humidity_bedroom
+          - binary_sensor.motion_sensor_bedroom
+          - light.bedroom_lights
+          - light.hue_bedroom_lamp_1
+          - light.hue_bedroom_lamp_2
+      - type: entity-filter
+        filter:
+          domain: input_boolean
+          state: 'on'
+        card_config:
+          title: Input booleans that are on
+
+  - tab_icon: mdi:home-assistant
+    name: Second view
+    cards:
+      - type: entities
+        title: Lots of Kitchen AC
+        entities:
+            # It is totally possible to render duplicates.
+          - light.kitchen_island_pendants
+          - light.kitchen_island_pendants
+          - light.kitchen_island_pendants
+          - light.kitchen_island_pendants
+          - light.kitchen_island_pendants
