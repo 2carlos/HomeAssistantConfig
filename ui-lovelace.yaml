@@ -4,7 +4,7 @@ views:
     theme: dark-mode
     cards:
       - type: entities
-        title: Example
+        title: Bedroom
         entities:
           - sensor.temperature_bedroom
           - sensor.humidity_bedroom
@@ -18,6 +18,85 @@ views:
           state: 'on'
         card_config:
           title: Input booleans that are on
+      - type: entities
+        title: Living Room
+        entities:
+          - sensor.temperature_living_room
+          - switch.kitchen_ceiling
+          - binary_sensor.motion_sensor_living_room
+          - sensor.humidity_bedroom
+          - sensor.illumination_bedroom
+          - switch.plugin_lamp
+          - remote.living_room
+          - light.flux_led
+          - light.kitchen_island_pendants
+          - light.dining_room_spot_lights
+          - light.hue_living_room_lamp
+      - type: entities
+        title: Study
+        entities:
+          - sensor.temperature_study
+          - binary_sensor.motion_sensor_study
+          - light.hue_study_lamp
+  - name: Lab
+    theme: dark-mode
+    cards:
+      - type: entities
+        title: xiaomi
+        entities:
+          - sensor.temperature_study
+          - sensor.temperature_living_room
+          - sensor.temperature_bedroom
+          - sensor.pressure_study
+          - sensor.pressure_living_room
+          - sensor.pressure_bedroom
+          - sensor.humidity_bedroom
+          - sensor.humidity_study
+          - sensor.humidity_living_room
+          - sensor.illumination_bedroom
+          - sensor.illumination_study
+          - sensor.illumination_gateway
+          - sensor.illumination_living_room
+          - binary_sensor.cube
+          - binary_sensor.switch_misc
+          - binary_sensor.switch_study
+          - binary_sensor.switch_living_room
+          - binary_sensor.switch_bedroom
+          - binary_sensor.motion_sensor_living_room
+          - binary_sensor.motion_sensor_bedroom
+          - binary_sensor.motion_sensor_study
+          - light.gateway
+      - type: entities
+        title: motion
+        entities:
+          - binary_sensor.motion_sensor_living_room
+          - binary_sensor.motion_sensor_bedroom
+          - binary_sensor.motion_sensor_study
+      - type: entities
+        title: climate
+        entities:
+          - sensor.temperature_thermostat
+          - sensor.temperature_study
+          - sensor.temperature_living_room
+          - sensor.temperature_bedroom
+          - sensor.humidity_bedroom
+          - sensor.humidity_study
+          - sensor.humidity_living_room
+          - climate.thermostat_heat
+          - climate.thermostat_cool
+          - sensor.temperature_thermostat
+      - type: entities
+        title: Front Door
+        entities:
+          - lock.front_door
+          - sensor.front_door_alarm_type
+          - sensor.front_door_alarm_level
+          - sensor.front_door_sourcenodeid
+          - sensor.front_door_access_control
+          - sensor.front_door_burglar
+          - sensor.front_door_power_management
+          - sensor.front_door_system
+
 
   - tab_icon: mdi:home-assistant
     name: Second view
